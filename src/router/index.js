@@ -1,3 +1,5 @@
+// import '@fortawesome/fontawesome-free/css/all.css'
+// import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
@@ -10,10 +12,37 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: () => import('../views/LogoutView.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/academic',
+    name: 'academic',
+    component: () => import('../views/AcademicView.vue')
+  },
+  {
+    path: '/gallery',
+    name: 'gallery',
+    component: () => import('../views/GalleryView.vue')
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgot-password',
+    component: () => import('../views/ForgotPassword.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import('../views/SignUp.vue')
   }
 ]
 
