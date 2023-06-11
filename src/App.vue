@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div class="app-page">
+    <div id="app">
     <PageLogo/>
       <PageHeader/>
     <div class="container">
@@ -10,19 +11,20 @@
     <div>
   </div>
   </div>
+  </div>
+
 </template>
 <script>
-import PageHeader from '@/components/PageHeader.vue'
-import PageMenu from '@/components/PageMenu.vue'
+// import PageHeader from '@/components/PageHeader.vue'
 import PageHamburgerMenu from '@/components/PageHamburgerMenu.vue'
 import PageLogo from '@/components/PageLogo.vue'
+import PageHeader from './components/PageHeader.vue'
 
 export default {
   name: 'app',
   components: {
     PageLogo,
     PageHeader,
-    PageMenu,
     PageHamburgerMenu
   }
 }
@@ -53,8 +55,9 @@ export default {
   flex-grow: 1;
 }
 
-body {
+.app-page {
   /* background: beige; */
+  border-radius: 10px;
   background: linear-gradient(to bottom, beige, white);
 }
 </style>

@@ -11,8 +11,8 @@
         <li><router-link to="/academic">Academic</router-link></li>
         <li><router-link to="/Gallery">Gallery</router-link></li>
         <li><router-link to="/login">Log In</router-link></li>
-        <li><router-link to="/logout">Log Out</router-link></li>
         <li><router-link to="/signup">Sign Up</router-link></li>
+        <li><router-link to="/logout">Log Out</router-link></li>
     </ul>
   </div>
 </template>

@@ -1,6 +1,9 @@
 <template>
     <div class="home">
-      <div class="profile-container">
+      <PageLogbar/>
+      <div class="home animate">
+      <h1>Welcome to My Saenghwal, 안녕! This is My Portfolio Page</h1>
+      <!-- <div class="profile-container">
         <div class="profile-picture" @click="togglePicture">
           <img src="../assets/MyPicture.jpg" alt="Profile Picture">
         </div>
@@ -10,7 +13,7 @@
             <span class="close-icon" @click="closePicture">X</span>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="search-field">
         <input type="text" v-model="searchQuery" placeholder="Search">
         <button @click="search">Search</button>
@@ -18,10 +21,9 @@
       <div v-if="showErrorMessage" class="error-message">
         Please enter a valid search query.
       </div>
-      <h1>Welcome to My Saenghwal, 안녕! this is my page</h1>
     <div class="main-page-content">
         <div class="section" @click="goToHome()">
-        <h2>Main Page</h2>
+        <h2>Home</h2>
         <ul>
           <li>Logo</li>
           <li>Homepage</li>
@@ -34,7 +36,7 @@
         </ul>
       </div>
       <div class="section" @click="goToAbout()">
-        <h2>Personal Portfolio</h2>
+        <h2>Creators</h2>
         <ul>
           <li>Logo</li>
           <li>Profile</li>
@@ -48,7 +50,7 @@
         </ul>
       </div>
       <div class="section" @click="goToSignIn()">
-        <h2>Sign In</h2>
+        <h2>Log In</h2>
         <ul>
           <li>Name</li>
           <li>E-mail</li>
@@ -97,15 +99,18 @@
   </div>
       <PageFooter/>
     </div>
+    </div>
 </template>
 
 <script>
 import PageFooter from '@/components/PageFooter.vue'
+import PageLogbar from '@/components/PageLogbar.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    PageFooter
+    PageFooter,
+    PageLogbar
   },
   data () {
     return {
@@ -166,6 +171,23 @@ export default {
 .app-container {
   background: white;
 }
+.animate{
+  opacity: 0;
+  transform: translate(-100px);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .profile-container {
   display: flex;
   justify-content: center;
@@ -173,8 +195,9 @@ export default {
   height: 50vh; /* Adjust the height as per your layout */
 }
 h1{
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: center;
+  font-size: 40px;
 }
 .profile-picture {
   width: 250px; /* Adjust the width and height as per your requirements */
@@ -221,16 +244,17 @@ h1{
   cursor: pointer;
 }
 .search-field {
-  margin-top: 10px; /* Adjust the spacing as needed */
+  margin-top: 80px; /* Adjust the spacing as needed */
   display: flex;
   align-items: center;
   justify-content: center;
   height: 10vh; /* Adjust the height as per your layout */
 }
 .search-field input[type="text"] {
-  padding: 10px;
+  padding: 15px;
   margin-right: 10px; /* Adjust the spacing as needed */
   border-radius: 10px;
+  font-size: 16px;
 }
 .search-field button{
   padding: 5px;
@@ -260,7 +284,11 @@ h1{
   opacity: 0.8;
   background-color: beige;
 }
-.main-page-content li{
+.main-page-content {
+  display: grid;
+  padding-top: 10px;
+  padding: 130px;
+  grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Creates 3 equal columns */
   text-align: left;
 }
 </style>

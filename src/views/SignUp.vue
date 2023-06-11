@@ -59,6 +59,7 @@ export default {
       this.name = ''
       this.email = ''
       this.password = ''
+      this.$router.push('/login')
     },
     signUp () {
       if (this.agreeTerms) {
@@ -161,7 +162,7 @@ position: absolute;
 bottom: 10px;
 left: 54%;
 /* transform: translateX(100%); */
-transform: translateY(-150%);
+transform: translateY(-170%);
 text-align: center;
 cursor: pointer;
 }

@@ -1,7 +1,7 @@
 <template>
-    <header>
+    <div class="bar1">
       <PageNavbar/>
-    </header>
+    </div>
 </template>
 
 <script>
@@ -16,5 +16,15 @@ export default {
 </script>
 
 <style>
+.header-container {
+  display: flex;
+}
 
+.bar1 {
+  flex: 1;
+}
+
+.bar2 {
+  flex: 4;
+}
 </style>

@@ -15,11 +15,14 @@
           <input type="password" id="password" v-model="password" required placeholder="Enter Your Password">
         </div>
         <div class="form-group">
+          <div v-if="showErrorMessage" class="error-message">
+            Please enter a valid search query.
+          </div>
           <p class="forgot-password-link">
             <router-link to="/forgot-password">Forgot Password?</router-link>
           </p>
         </div>
-        <button type="submit">Sign In</button>
+        <button @:on-click="goToHome">Log In</button>
       </form>
       <div class="social-icons">
           <a href="#" class="icon"><i class="fab fa-google fa-3x"></i></a>
@@ -49,11 +52,18 @@ export default {
   methods: {
     login (event) {
       event.preventDefault()
-      console.log('Email:', this.email)
-      console.log('Password:', this.password)
-      // Reset form fields
-      this.email = ''
-      this.password = ''
+      if (this.name && this.password) {
+        console.log('Email:', this.name)
+        console.log('Password:', this.password)
+        this.name = ''
+        this.password = ''
+        this.$router.push('/')
+      } else {
+        // Reset form fields
+        this.showErrorMessage = true
+        this.name = ''
+        this.password = ''
+      }
     },
     goToSignUp () {
       this.$router.push('/signup')
@@ -149,7 +159,7 @@ position: absolute;
 bottom: 10px;
 left: 47.25%;
 /* transform: translateX(100%); */
-transform: translateY(-260%);
+transform: translateY(-270%);
 text-align: center;
 cursor: pointer;
 }

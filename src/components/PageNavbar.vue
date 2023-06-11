@@ -1,14 +1,12 @@
 <template>
   <div class="nav-bar">
     <router-link class="menu-item" to="/">Home</router-link>
-    <router-link class="menu-item" to="/about">About</router-link>
+    <router-link class="menu-item" to="/about">Creators</router-link>
     <router-link class="menu-item" to="/academic">Academic</router-link>
     <router-link class="menu-item" to="/gallery">Gallery</router-link>
-    <router-link class="menu-item" to="/login">Log In</router-link>
-    <router-link class="menu-item" to="/logout">Log Out</router-link>
-    <router-link class="menu-item" to="/signup">Sign Up</router-link>
   </div>
 </template>
+
 <style>
 .nav-bar {
   display: flex;
@@ -16,7 +14,8 @@
   align-items: center;
   background-color: beige;
   padding: 10px;
-  margin-left: 10px;
+  padding-bottom: 50px;
+  margin: 0 auto;
 }
 
 .menu-item {
@@ -38,7 +37,7 @@
 }
 
 .nav-bar router-link:hover {
-  color:gray;
+  color: gray;
   background-color: #e3e3e3;
 }
 </style>
