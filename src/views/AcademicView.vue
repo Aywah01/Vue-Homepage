@@ -4,8 +4,8 @@
       <h1>Academic</h1>
       <div class="section animated-section">
         <h2>About Me</h2>
-        <p>I am a passionate and dedicated academic with expertise in Full-Stack Developer.</p>
-        <a href="../assets/Rujhan_Resume.pdf" download="Rujhan_Resume.pdf">Download My Resume</a>
+        <p>My name is Rujhan, I am a passionate and dedicated academic with expertise in Full-Stack Developer.</p>
+        <a href="Vue Project/Other/Rujhan_Resume.pdf" download="Rujhan_Resume.pdf">Download My Resume</a>
       </div>
       <div class="section animated-section">
         <h2>Education</h2>
@@ -42,6 +42,22 @@
           <li><strong>Agile Software Development</strong></li><br>
           <li><strong>Software Testing and Quality Assurance</strong></li><br>
           <li><strong>Software Security</strong></li>
+        </div>
+      </div>
+      <div class="section animated-section">
+        <div class="goals">
+          <h2>Goals</h2>
+          <li><strong>Work in South Korea for a couple years</strong></li><br>
+          <li><strong>Master in Front-end Devoloping</strong></li><br>
+          <li><strong>To have a financially stable life</strong></li>
+        </div>
+      </div>
+      <div class="section animated-section">
+        <div class="goals">
+          <h2>Technology and Design</h2>
+          <li><strong>Technology:</strong> My aim to have a homepage that can be access to everyone, either at a young age or later. Other than that it can be my portfolio.
+          I am using HTML, CSS, and Javascript(Vue).</li><br>
+          <li><strong>Design and Layout:</strong> My design is a minimalist design. I used neutral colour as the main color, as it will make the homepage more welcoming.</li><br>
         </div>
       </div>
       <!-- Add more sections as needed -->

@@ -2,9 +2,21 @@
   <div class="about">
     <h1>Creators</h1>
     <div class="about-container">
-      <div class="profile-picture1" @click="togglePicture1">
+      <div class="creator1">
+        <div class="profile-picture1" @click="togglePicture1">
           <img src="../assets/Mypictures.jpg" alt="Profile Picture">
-          <div class="label">Creator 1</div>
+        </div>
+        <div class="about-creator">
+          <div class="label"><h2>Creator 1</h2></div>
+          <li><strong>Name:
+          </strong>Rujhan bin Munawwaruzzaman(루즈한)</li><br>
+          <li><strong>University:
+          </strong> Dongyang Mirae University</li><br>
+          <li><strong>Age:
+          </strong> 20</li><br>
+          <li><strong>Occupation:
+          </strong>Full-Stack Developer</li><br>
+          <button class="more-button" @click="gotoAcademic">More</button>
         </div>
         <div v-if="showFullPicture1" class="full-picture-overlay" @click="closePicture1">
           <div class="full-picture">
@@ -12,9 +24,22 @@
             <span class="close-icon" @click="closePicture1">X</span>
           </div>
         </div>
+      </div>
+      <div class="creator2">
         <div class="profile-picture2" @click="togglePicture2">
           <img src="../assets/Mypicture2.jpg" alt="Profile Picture">
-          <div class="label">Creator 2</div>
+        </div>
+        <div class="about-creator">
+          <div class="label"><h2>Creator 2</h2></div>
+          <li><strong>Name:
+          </strong>Sharifah Ilham Sofea binti Nazarudin(소피아)</li><br>
+          <li><strong>University:
+          </strong>Sungkyunkwan University</li><br>
+          <li><strong>Age:
+          </strong>21</li><br>
+          <li><strong>Occupation:
+          </strong>Software Developer</li><br>
+          <button class="more-button" @click="gotoAcademic">More</button>
         </div>
         <div v-if="showFullPicture2" class="full-picture-overlay" @click="closePicture2">
           <div class="full-picture">
@@ -22,6 +47,7 @@
             <span class="close-icon" @click="closePicture2">X</span>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +76,9 @@ export default {
     },
     closePicture2 () {
       this.showFullPicture2 = false
+    },
+    gotoAcademic () {
+      this.$router.push('/academic')
     }
   }
 }
@@ -62,9 +91,46 @@ export default {
   margin-top: auto;
   height: 100vh; /* Adjust the height as per your layout */
 }
+.creator1, .creator2 {
+  width: 500px; /* Adjust the width of the container as per your requirements */
+  height: 600px; /* Adjust the height of the container as per your requirements */
+  margin: 0 10px; /* Adjust the margin as per your layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  background-color: ivory;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 1.0s ease;
+}
+.about-creator{
+  width: 420px; /* Adjust the width of the container as per your requirements */
+  height: 300px; /* Adjust the height of the container as per your requirements */
+  margin: 20px 20px; /* Adjust the margin as per your layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 1.0s ease;
+}
+.creator1:hover, .creator2:hover{
+  cursor: pointer;
+  opacity: 0.8;
+  background-color: beige;
+}
 h1{
   margin-top: 10px;
   text-align: center;
+}
+.more-button{
+  padding: 10px;
+  border-radius: 5px;
+  background: beige;
+  cursor: pointer;
 }
 .profile-picture1 {
   position: relative;
@@ -73,6 +139,10 @@ h1{
   border-radius: 50%; /* Make it a circle using border-radius */
   overflow: hidden; /* Hide any content that exceeds the circular shape */
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 .profile-picture1 img {
   width: 100%;
@@ -87,6 +157,10 @@ h1{
   overflow: hidden; /* Hide any content that exceeds the circular shape */
   cursor: pointer;
   margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 .profile-picture2 img {
   width: 100%;
@@ -94,13 +168,10 @@ h1{
   object-fit: cover; /* Maintain the aspect ratio of the image */
 }
 .label {
-  position: absolute;
-  bottom: -20px; /* Adjust the distance from the picture */
-  left: 0;
-  width: 100%;
   text-align: center;
   font-size: 14px;
   color: #333;
+  margin-top: 20px; /* Adjust the margin as per your preference */
 }
 .full-picture-overlay{
   position: fixed;
@@ -134,4 +205,5 @@ h1{
   color: #fff;
   cursor: pointer;
 }
+
 </style>
